@@ -1,1 +1,188 @@
-# APE-3_Arboles
+Implementación de Arboles
+
+1.	INTRODUCCION:
+
+En esta práctica se trabajó con estructuras de datos tipo árbol utilizando los lenguajes de programación C++ y Java. El desarrollo de los ejercicios permitió comprender la organización jerárquica de los árboles, el uso de nodos enlazados mediante referencias o punteros y la aplicación de recursividad para resolver distintos problemas.
+Los árboles son una de las estructuras de datos más importantes dentro de la informática debido a que permiten representar información de manera organizada y eficiente. Son ampliamente utilizados en sistemas de archivos, bases de datos, inteligencia artificial, compiladores y motores de búsqueda.
+
+Durante la práctica se implementaron diferentes operaciones fundamentales sobre árboles N-arios y árboles binarios, incluyendo:
+•	Conteo de nodos.
+•	Inserción en árboles binarios de búsqueda.
+•	Cálculo de altura.
+•	Recorridos.
+•	Transformación de árboles.
+
+Cada ejercicio fue desarrollado tanto en C++ como en Java, permitiendo comparar el manejo de memoria, objetos, punteros y referencias entre ambos lenguajes.
+
+2.	MARCO TEORICO:
+
+Árbol:
+Un árbol es una estructura de datos no lineal formada por nodos conectados jerárquicamente. Cada árbol posee:
+•	Un nodo principal llamado raíz.
+•	Nodos hijos.
+•	Nodos padres.
+•	Subárboles.
+•	Nodos hoja.
+La relación entre nodos permite representar información jerárquica.
+
+Características de los árboles:
+Los árboles poseen varias características importantes:
+•	Son estructuras dinámicas.
+•	Permiten organizar información jerárquicamente.
+•	Facilitan búsquedas eficientes.
+•	Utilizan nodos enlazados.
+•	Pueden recorrerse mediante algoritmos recursivos.
+Los árboles son ampliamente utilizados en sistemas informáticos debido a su capacidad para representar relaciones jerárquicas de manera eficiente.
+
+Aplicaciones de los árboles:
+Los árboles tienen numerosas aplicaciones dentro de la informática, entre ellas:
+•	Sistemas de archivos.
+•	Motores de búsqueda.
+•	Bases de datos.
+•	Compiladores.
+•	Inteligencia artificial.
+•	Redes computacionales.
+•	Árboles genealógicos.
+•	Sistemas de decisión.
+
+Árbol N-ario:
+Un árbol N-ario es una estructura donde cada nodo puede tener múltiples hijos. No existe un límite fijo de descendientes.
+
+Ejemplo:
+         1
+     /   |    \
+    2   3   4
+  /   \
+5     6
+
+En este tipo de árbol:
+	El nodo 1 es la raíz.
+	Los nodos 2, 3 y 4 son hijos de la raíz.
+	Los nodos 5 y 6 son hijos del nodo 2.
+
+Los árboles N-arios son útiles para representar estructuras donde un elemento puede tener múltiples dependencias.
+
+Árbol Binario:
+Un árbol binario es una estructura donde cada nodo posee como máximo dos hijos:
+•	Hijo izquierdo.
+•	Hijo derecho.
+
+Ejemplo:
+  10
+  /   \
+5   15
+
+Árbol Binario de Búsqueda (BST):
+El Árbol Binario de Búsqueda, conocido como BST (Binary Search Tree), es un tipo especial de árbol binario que organiza los valores siguiendo reglas específicas:
+	Todos los valores menores al nodo actual se colocan a la izquierda.
+	Todos los valores mayores o iguales se colocan a la derecha.
+
+Ejemplo:
+     10
+     /   \
+   5    15
+ /   \     \
+3   7    20
+
+Los BST permiten realizar:
+	Inserciones eficientes.
+	Búsquedas rápidas.
+	Eliminación organizada de nodos.
+	Recorridos ordenados.
+
+Recursividad:
+La recursividad es una técnica de programación donde una función se llama a sí misma para resolver un problema más grande dividiéndolo en subproblemas más pequeños.
+La recursividad es fundamental en árboles debido a que:
+	Cada subárbol puede tratarse como un árbol independiente.
+	Simplifica la implementación de recorridos.
+	Reduce la complejidad lógica del código.
+
+Toda función recursiva debe poseer:
+1.	Caso base.
+2.	Llamada recursiva.
+
+Ejemplo base:
+Si el nodo es null → terminar.
+Si no → procesar y llamar nuevamente.
+
+Recorridos de Árboles Binarios:
+Un recorrido es el proceso mediante el cual se visitan todos los nodos del árbol siguiendo un orden específico.
+
+Los recorridos permiten:
+•	Mostrar información. 
+•	Buscar datos. 
+•	Procesar estructuras jerárquicas. 
+•	Organizar información. 
+
+Existen dos tipos principales:
+•	DFS (Depth First Search) 
+•	BFS (Breadth First Search) 
+
+DFS (Depth First Search):
+DFS significa “búsqueda en profundidad”. Este método recorre primero las ramas más profundas del árbol antes de regresar a otros nodos.
+
+Los recorridos DFS son:
+•	Inorden 
+•	Preorden 
+•	Postorden 
+
+DFS generalmente utiliza:
+•	Recursividad 
+•	Pila implícita del sistema 
+
+Recorrido Inorden:
+El recorrido Inorden sigue el orden: Izquierda → Raíz → Derecha
+Recorrido Preorden:
+El recorrido Preorden sigue el orden: Raíz → Izquierda → Derecha
+Recorrido Postorden:
+El recorrido Postorden sigue el orden: Izquierda → Derecha → Raíz
+BFS (Breadth First Search):
+BFS significa “búsqueda en anchura”. Este recorrido visita los nodos nivel por nivel.
+
+Altura de un árbol:
+La altura de un árbol representa la cantidad máxima de niveles existentes desde la raíz hasta el nodo más profundo.
+
+Ejemplo:
+1
+  \
+   2
+     \
+      3
+
+La altura del árbol es 3. El cálculo de altura normalmente se realiza utilizando recursividad.
+
+Árbol Espejo:
+Un árbol espejo es el resultado de intercambiar todos los hijos izquierdos y derechos de cada nodo del árbol.
+
+Ejemplo:
+
+Árbol original:
+  1
+ /  \
+2   3
+Árbol invertido:
+  1
+ /  \
+3   2
+
+La transformación se realiza mediante intercambio recursivo de nodos.
+
+Árboles Binarios en C++:
+En C++ los árboles binarios se implementan utilizando:
+•	estructuras (struct) 
+•	punteros 
+•	memoria dinámica (new) 
+
+Ejemplo:
+Nodo* izquierdo;
+Nodo* derecho;
+
+Árboles Binarios en Java:
+En Java los árboles binarios se implementan mediante:
+•	clases 
+•	objetos 
+•	referencias 
+
+Ejemplo:
+Nodo izquierdo;
+Nodo derecho;
