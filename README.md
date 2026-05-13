@@ -507,7 +507,7 @@ La recursividad permitió encontrar automáticamente el nivel más profundo del 
 En C++ se utilizó un vector<int> para almacenar el recorrido.
 <pre>
 vector<int> resultado;
-</int>
+</pre>
          
 La función recursiva siguió el orden:
 <pre>
