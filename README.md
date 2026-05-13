@@ -736,5 +736,61 @@ La función recursiva permitió convertir el árbol original en un árbol espejo
 
 Se incluyen capturas del funcionamiento de cada programa (ejercicios):
 
+a) Ejercicio 1 En C++:
 
+<img width="407" height="291" alt="Ejercicio1" src="https://github.com/user-attachments/assets/0b220bb8-2557-4f17-bc70-aea8b6bee4b0" />
 
+b) Ejercicio 2 En C++:
+
+<img width="404" height="278" alt="Ejercicio2" src="https://github.com/user-attachments/assets/15849384-fe37-4689-988c-4d06135f4d4e" />
+
+c) Ejercicio 3 En C++:
+
+<img width="407" height="263" alt="Ejercicio3" src="https://github.com/user-attachments/assets/d7eedf25-28ce-49ff-91aa-5880c3d2b924" /> 
+
+d) Ejercicio 4 En C++:
+
+<img width="409" height="302" alt="Ejercicio4" src="https://github.com/user-attachments/assets/ae92768c-fa3a-4c03-a1d3-decf2a1e2833" />
+
+e) Ejercicio 5 En C++:
+
+<img width="406" height="344" alt="Ejercicio5" src="https://github.com/user-attachments/assets/4c99b0b2-cb87-4209-af08-57e363f127ba" />
+
+# 7. CAPTURAS EN JAVA:
+
+Se incluyen capturas del funcionamiento de cada programa (ejercicios):
+
+a) Ejercicio 1 En Java:
+
+<img width="227" height="210" alt="Ejercicio1" src="https://github.com/user-attachments/assets/e4e19dc9-7c16-46fa-8133-9fc891589b1f" />
+
+b) Ejercicio 2 En Java:
+
+<img width="224" height="211" alt="Ejercicio2" src="https://github.com/user-attachments/assets/bc3cdbe5-58cd-4e64-8751-456c9526f850" />
+
+c) Ejercicio 3 En Java:
+
+<img width="270" height="186" alt="Ejercicio3" src="https://github.com/user-attachments/assets/5a73c33e-9c81-45eb-beba-baf35a2d13b2" />
+
+d) Ejercicio 4 En Java:
+
+<img width="248" height="224" alt="Ejercicio4" src="https://github.com/user-attachments/assets/4edea068-a42d-433a-a979-5039bbfff101" />
+
+e) Ejercicio 5 En Java:
+
+<img width="257" height="263" alt="Ejercicio5" src="https://github.com/user-attachments/assets/f7716951-22fb-4d6f-9fe5-4ba8de270e3e" />
+
+# CONCLUSIONES:
+
+1. La práctica realizada permitió comprender de manera clara el funcionamiento de las estructuras de datos tipo árbol, identificando cómo se organizan jerárquicamente los nodos y cómo esta organización facilita la representación y manipulación eficiente de información. 
+2. El desarrollo de los ejercicios fortaleció el uso de la recursividad como herramienta fundamental para trabajar con estructuras jerárquicas. A través de operaciones como conteo de nodos, cálculo de altura, recorridos e inversión de árboles, se evidenció que la recursividad simplifica la lógica de programación y permite recorrer estructuras complejas de forma más ordenada, eficiente y comprensible. 
+3. La implementación de los ejercicios en C++ y Java permitió comparar directamente ambos lenguajes de programación, identificando diferencias en aspectos como el manejo de memoria, uso de punteros y referencias, administración de objetos y sintaxis. Esto ayudó a comprender que, aunque la lógica algorítmica puede mantenerse igual, cada lenguaje posee características que influyen en la forma de implementar estructuras dinámicas como los árboles. 
+4. El trabajo realizado sobre Árboles Binarios de Búsqueda (BST) permitió entender la importancia de mantener una correcta organización de los nodos para optimizar operaciones de búsqueda, inserción y recorrido. Asimismo, el recorrido In-Order demostró cómo los árboles pueden utilizarse para almacenar y recuperar información de manera ordenada.
+5. Finalmente, la práctica contribuyó al fortalecimiento de habilidades de análisis lógico, resolución de problemas y programación estructurada, ya que cada ejercicio requirió comprender el comportamiento interno del árbol, analizar casos base y aplicar correctamente funciones recursivas.
+
+# RECOMENDACIONES:
+
+1. Continuar practicando el desarrollo de estructuras de datos tipo árbol mediante ejercicios más complejos, con el fin de fortalecer la comprensión de la recursividad, el manejo de nodos y la lógica necesaria para resolver problemas relacionados con estructuras jerárquicas y dinámicas. 
+2. Implementar otros tipos de recorridos como Pre-Order y Post-Order para ampliar el conocimiento sobre las diferentes formas de acceder y procesar la información almacenada dentro de un árbol binario, identificando las ventajas y aplicaciones de cada recorrido. 
+3. Fortalecer el manejo de memoria dinámica en C++, especialmente en el uso correcto de punteros y liberación de memoria, para evitar errores comunes como fugas de memoria, referencias inválidas o accesos incorrectos a nodos. 
+4. Continuar desarrollando ejercicios que involucren recursividad, debido a que esta técnica es fundamental en estructuras jerárquicas y constituye una de las bases más importantes para resolver problemas avanzados de programación y algoritmos.
