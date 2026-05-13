@@ -241,7 +241,7 @@ El árbol utilizado en las pruebas fue el siguiente:
 <pre>
            1
        /    |   \
-      2   3    4
+      2     3    4
      /  \
    5    6
 </pre>
