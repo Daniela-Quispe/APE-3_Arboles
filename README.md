@@ -455,7 +455,7 @@ Nodo* insertar(Nodo* raiz, int valor) { // Función insertar
     }
     return raiz;
 }
-</raiz->
+</pre>
 La función insertar() realizaba comparaciones entre el valor nuevo y el nodo actual.
          
 La lógica implementada fue:
