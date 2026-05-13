@@ -390,4 +390,351 @@ La recursividad permitió realizar la inversión en todos los niveles del árbol
 Izquierdo: 3
 Derecho: 2
 
+# 4. IMPLEMENTACION DE LOS EJERCICIOS EN C++:
+
+## EJERCICIO 1:
+
+### Conteo de nodos en árbol N-ario:
+
+En C++ se utilizó una estructura struct llamada NodoN para representar cada nodo del árbol. Cada nodo almacenaba:
+<pre>
+1. Un valor entero. 
+2. Un vector dinámico de hijos mediante vector<-NodoN*->. 
+</pre>
+<pre>
+struct NodoN {
+    int valor;
+    vector<-NodoN*-> hijos;
+};
+</pre>
+#### Función para contar nodos:
+<pre>
+int contarNodos(NodoN* raiz) {
+
+    if (raiz == nullptr) {     // Caso base
+        return 0;
+    }
+    int cantidad = 1;     // Contar nodo actual
+    for (NodoN* hijo : raiz->hijos) {     // Recorrer hijos
+        cantidad += contarNodos(hijo);
+    }
+    return cantidad;
+}
+</pre>
+La función contarNodos() se implementó utilizando recursividad.
+
+La lógica consistió en:
+<pre>
+1. Verificar si el nodo era nulo. 
+2. Contar el nodo actual. 
+3. Recorrer todos los hijos utilizando un ciclo. 
+4. Sumar recursivamente la cantidad de nodos hijos.
+</pre>
+## EJERCICIO 2:
+
+### Inserción en Árbol Binario de Búsqueda:
+
+En C++ se utilizó una estructura Nodo con punteros hacia el hijo izquierdo y derecho.
+<pre>
+struct Nodo {
+    int valor;
+    Nodo* izquierdo;
+    Nodo* derecho;
+};
+</pre>
+#### Función para insertar nodos:
+<pre>
+Nodo* insertar(Nodo* raiz, int valor) { // Función insertar
+    if (raiz == nullptr) {     // Si está vacío crear nodo
+        return new Nodo(valor);
+    }
+    if (valor < raiz->valor) {     // Insertar izquierda
+        raiz->izquierdo = insertar(raiz->izquierdo, valor);
+    } else { // Insertar derecha
+        raiz->derecho = insertar(raiz->derecho, valor);
+    }
+    return raiz;
+}
+</raiz->
+La función insertar() realizaba comparaciones entre el valor nuevo y el nodo actual.
+         
+La lógica implementada fue:
+<pre>
+1. Valores menores → izquierda. 
+2. Valores mayores o iguales → derecha. 
+</pre>
+
+La función recorría el árbol recursivamente hasta encontrar una posición vacía (nullptr) donde insertar el nuevo nodo.
+
+## EJERCICIO 3:
+
+### Cálculo de altura del árbol:
+
+En C++ se implementó una función recursiva llamada calcularAltura().
+
+La lógica desarrollada fue:
+<pre>
+1. Retornar 0 si el nodo es nulo. 
+2. Calcular la altura izquierda. 
+3. Calcular la altura derecha. 
+4. Retornar la altura mayor más uno. 
+</pre>
+
+Se utilizó la función max() de la librería <algorithm>.
+<pre>
+return 1 + max(alturaIzquierda, alturaDerecha);
+</pre>
+
+#### Función para calcular altura:
+<pre>
+int calcularAltura(Nodo* raiz) { // Función altura
+
+    if (raiz == nullptr) { // Caso base
+        return 0;
+    }
+    int izquierda = calcularAltura(raiz->izquierdo); // Altura izquierda
+    int derecha = calcularAltura(raiz->derecho); // Altura derecha
+    return 1 + max(izquierda, derecha); // Retornar altura mayor
+}
+</pre>
+
+La recursividad permitió encontrar automáticamente el nivel más profundo del árbol.
+
+## EJERCICIO 4:
+
+### Recorrido In-Order:
+
+En C++ se utilizó un vector<int> para almacenar el recorrido.
+<pre>
+vector<int> resultado;
+</int>
+         
+La función recursiva siguió el orden:
+<pre>
+1. Izquierda → Nodo → Derecha
+</pre>
+
+#### Función para realizar el recorrido in-order:
+<pre>
+void inOrderAux(Nodo* nodo,vector<int>& resultado) { // Función auxiliar
+
+    if (nodo == nullptr) { // Caso base
+        return;
+    }
+    inOrderAux(nodo->izquierdo, resultado); // Izquierda
+    resultado.push_back(nodo->valor); // Nodo actual
+    inOrderAux(nodo->derecho, resultado); // Derecha
+
+}
+vector<int> recorridoInOrder(Nodo* raiz) { // Función principal
+    vector<int> resultado;
+    inOrderAux(raiz, resultado);
+    return resultado;
+}
+</pre>
+
+La implementación permitió recorrer correctamente todos los nodos del árbol binario.
+En árboles BST este recorrido devuelve los elementos ordenados.
+
+## EJERCICIO 5:
+
+### Inversión de árbol binario:
+
+En C++ se desarrolló una función para invertir el árbol binario intercambiando los hijos izquierdos y derechos.
+
+La lógica aplicada fue:
+<pre>
+1. Guardar temporalmente el hijo izquierdo. 
+2. Intercambiar ambos hijos. 
+3. Aplicar recursividad sobre cada subárbol. 
+</pre>
+<pre>
+Nodo* temp = raiz->izquierdo;
+raiz->izquierdo = raiz->derecho;
+raiz->derecho = temp;
+</pre>
+
+#### Función para invertir un árbol binario:
+<pre>
+Nodo* invertir(Nodo* raiz) { // Función invertir
+
+    if (raiz == nullptr) { // Caso base
+        return nullptr;
+    }
+    Nodo* temporal = raiz->izquierdo; // Intercambio
+    raiz->izquierdo = raiz->derecho;
+    raiz->derecho = temporal;
+
+    invertir(raiz->izquierdo); // Recursividad
+    invertir(raiz->derecho);
+    return raiz;
+}
+</pre>
+
+La función recorrió todos los niveles del árbol realizando la inversión completa.
+
+# 5. IMPLEMENTACION DE LOS EJERCICIOS EN JAVA:
+
+## EJERCICIO 1:
+
+### Conteo de nodos en árbol N-ario:
+
+En Java se utilizó una clase NodoN. Cada nodo almacenaba: 
+<pre>
+1. Un valor entero. 
+2. Una lista dinámica de hijos utilizando List<NodoN>. 
+</pre>
+<pre>         
+class NodoN {
+    int valor;
+    List<NodoN> hijos;
+}
+</pre>
+#### Función para contar nodos:
+<pre>
+    public static int contarNodos(NodoN raiz) {
+
+        if (raiz == null) {  // Caso base
+            return 0;
+        }
+        int cantidad = 1; // Contar nodo actual
+        
+        for (NodoN hijo : raiz.hijos) { // Recorrer hijos
+            cantidad += contarNodos(hijo);
+        }
+        return cantidad;
+    }
+}
+</pre>
+
+La función contarNodos() utilizó la misma lógica recursiva implementada en C++.
+Java permitió trabajar utilizando referencias a objetos sin necesidad de manejar memoria manualmente.
+
+## EJERCICIO 2:
+
+### Inserción en Árbol Binario de Búsqueda:
+
+En Java se utilizó una clase Nodo con referencias a objetos.
+<pre>
+class Nodo {
+    int valor;
+    Nodo izquierdo;
+    Nodo derecho;
+}
+</pre>
+
+#### Función para insertar nodos:
+<pre>
+    public static Nodo insertar(
+            Nodo raiz,
+            int valor) {
+
+        if (raiz == null) {  // Crear nodo si está vacío
+            return new Nodo(valor);
+        }
+        if (valor < raiz.valor) { // Insertar izquierda
+            raiz.izquierdo = insertar(raiz.izquierdo, valor);
+        } else { // Insertar derecha
+            raiz.derecho = insertar(raiz.derecho, valor);
+        }
+        return raiz;
+    }
+}
+</pre>
+La función insertar() siguió exactamente las mismas reglas del BST utilizadas en C++.
+
+La diferencia principal fue que Java administra automáticamente la memoria mediante el Garbage Collector.
+
+## EJERCICIO 3:
+
+### Cálculo de altura del árbol:
+
+En Java se utilizó el método Math.max() para comparar ambas alturas:
+<pre>
+return 1 + Math.max(alturaIzquierda, alturaDerecha);
+</pre>
+#### Función para calcular altura:
+<pre>
+ public static int calcularAltura(Nodo raiz) {
+
+        if (raiz == null) { // Caso base
+            return 0;
+        }
+        int izquierda = calcularAltura(raiz.izquierdo); // Altura izquierda
+        int derecha = calcularAltura(raiz.derecho); // Altura derecha
+        return 1 + Math.max(izquierda,derecha); // Retornar altura mayor
+    }
+}
+</pre>
+La función recorrió todos los nodos del árbol hasta calcular la profundidad máxima.
+La implementación fue similar a C++, aunque utilizando referencias en lugar de punteros.
+
+## EJERCICIO 4:
+
+### Recorrido In-Order:
+
+En Java se utilizó una lista dinámica List<Integer>.
+<pre>
+List<Integer> resultado = new ArrayList<>();
+</pre>
+La función recursiva realizó:
+<pre>
+1. Recorrido izquierdo. 
+2. Guardado del nodo actual. 
+3. Recorrido derecho.
+</pre>
+#### Función para realizar el recorrido in-order:
+<pre>
+public static void inOrderAux(Nodo nodo,List<Integer> resultado) { // Función auxiliar
+
+        if (nodo == null) { // Caso base
+            return;
+        }
+        inOrderAux(nodo.izquierdo,resultado); // Izquierda
+        resultado.add(nodo.valor); // Nodo actual
+        inOrderAux(nodo.derecho,resultado); // Derecha
+    }
+    public static List<Integer>recorridoInOrder(Nodo raiz) { // Función principal
+        List<Integer> resultado = new ArrayList<>();
+        inOrderAux(raiz, resultado);
+        return resultado;
+    }
+}
+</pre>
+Los resultados fueron almacenados en la lista y posteriormente impresos en consola.
+
+## EJERCICIO 5:
+
+### Inversión de árbol binario:
+
+En Java se utilizó la misma lógica de intercambio, pero utilizando referencias a objetos.
+<pre>
+Nodo temporal = raiz.izquierdo;
+raiz.izquierdo = raiz.derecho;
+raiz.derecho = temporal;
+</pre>
+#### Función para invertir un árbol binario:
+<pre>
+    public static Nodo invertir(Nodo raiz) {
+
+        if (raiz == null) { // Caso base
+            return null;
+        }
+        Nodo temporal = raiz.izquierdo; // Intercambio
+        raiz.izquierdo = raiz.derecho;
+        raiz.derecho = temporal;
+     
+        invertir(raiz.izquierdo); // Recursividad
+        invertir(raiz.derecho);
+        return raiz;
+    }
+}
+</pre>
+La función recursiva permitió convertir el árbol original en un árbol espejo recorriendo automáticamente todos los nodos.
+
+# 6. CAPTURAS EN C++:
+
+Se incluyen capturas del funcionamiento de cada programa (ejercicios):
+
+
 
